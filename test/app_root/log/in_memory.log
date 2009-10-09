@@ -1,0 +1,120 @@
+# Logfile created on Fri Oct 09 12:52:32 +0100 2009  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing TestController#index (for 127.0.0.1 at 2009-10-09 12:52:34) [GET]
+Rendering template within layouts/application
+Rendering test/index
+
+SystemStackError (stack level too deep):
+  /test/actionview_test.rb:5:in `setup'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /usr/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /usr/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /usr/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /usr/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /usr/lib/ruby/1.8/test/unit.rb:278
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-09 12:52:35) [GET]
+
+SystemStackError (stack level too deep):
+  /test/actionview_test.rb:5:in `setup'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+  /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+  /usr/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+  /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+  /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+  /usr/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+  /usr/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+  /usr/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+  /usr/lib/ruby/1.8/test/unit.rb:278
+  rake (0.8.7) lib/rake/rake_test_loader.rb:5
+
+/!\ FAILSAFE /!\  Fri Oct 09 12:52:35 +0100 2009
+  Status: 500 Internal Server Error
+  stack level too deep
+    /home/pgte/dev/styledobjects/vendor/plugins/styled_objects/lib/styled_objects/actionview.rb:18:in `render_without_styled_object'
+    /home/pgte/dev/styledobjects/vendor/plugins/styled_objects/lib/styled_objects/actionview.rb:18:in `render'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/rescue.rb:134:in `rescue_action_locally'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/rescue.rb:152:in `rescue_action_without_handler'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/rescue.rb:74:in `rescue_action'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/base.rb:527:in `send'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/base.rb:527:in `process_without_filters'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/dispatcher.rb:91:in `dispatch'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/reloader.rb:29:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lint.rb:47:in `_call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lint.rb:35:in `call'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/integration.rb:313:in `process'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/integration.rb:196:in `get'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/integration.rb:491:in `__send__'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/integration.rb:491:in `get'
+    ./test/actionview_test.rb:5:in `setup'
+    ./test/app_root/config/../../../../../../vendor/rails/activesupport/lib/active_support/testing/setup_and_teardown.rb:61:in `run'
+    ./test/app_root/config/../../../../../../vendor/rails/actionpack/lib/action_controller/integration.rb:645:in `run'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'
+    /usr/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'
+    /usr/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'
+    /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'
+    /usr/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'
+    /usr/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'
+    /usr/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'
+    /usr/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'
+    /usr/lib/ruby/1.8/test/unit.rb:278
+    /usr/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake/rake_test_loader.rb:5
