@@ -4,17 +4,10 @@ Rails plugin for managing and presenting stylesheets.
 
 Uses LESS. 
 
-## Install
+## Documentation:
 
-### As a Rail plugin
-
-Using script/plugin:
-
-<code>script/plugin install git://github.com/pgte/styled_objects.git</code>
-
-or using git clone: 
-
-<code>git clone git://github.com/pgte/styled_objects.git</code> vendor/plugins/styled_objects
-
-Restart your server.
-
+* What is styled_objects?
+* Why do I need styled_objects?
+* [Installing](http://wiki.github.com/pgte/styled_objects/installing)
+* [Getting Started](http://wiki.github.com/pgte/styled_objects/getting-started)
+* [Frequent questions](http://wiki.github.com/pgte/styled_objects/frequent-questions)

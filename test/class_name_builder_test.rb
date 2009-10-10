@@ -13,7 +13,4 @@ class ClassNameBuilderTest < ActionController::TestCase
     assert_equal 'so-foo-bar-xpto', StyledObjects::ClassNameBuilder.build_class_name_from_partial_path('foo/bar/_xpto.css')
   end
 
-#  test "truth" do
-#    assert true
-#  end
 end
