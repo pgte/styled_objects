@@ -12,3 +12,5 @@ Keep your CSS close to their respective templates. styled_objects will compile t
 * [Installing](http://wiki.github.com/pgte/styled_objects/installing)
 * [Getting Started](http://wiki.github.com/pgte/styled_objects/getting-started)
 * [Frequent questions](http://wiki.github.com/pgte/styled_objects/frequent-questions)
+* [To do](http://wiki.github.com/pgte/styled_objects/to-do)
+* [Benchmarks](http://wiki.github.com/pgte/styled_objects/benchmarks)

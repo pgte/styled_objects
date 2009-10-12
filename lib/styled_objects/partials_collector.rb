@@ -2,17 +2,21 @@ module StyledObjects
   class PartialsCollector
     
     def initialize(view_paths)
-      @partials = {}
+      @stylesheets = {}
+      @visited_partials = {}
       @view_paths = view_paths
     end
     
     def partial_visited(partial)
-      style_file = _find_style_file(partial)
-      if style_file
-        @partials[style_file] = true
-      else
-        nil
-      end
+#      unless @visited_partials[partial]
+#        @visited_partials[partial] = true
+        style_file = _find_style_file(partial)
+        if style_file
+          @stylesheets[style_file] = true
+        else
+          nil
+        end
+#      end
     end
     
     
@@ -20,8 +24,8 @@ module StyledObjects
       partial_visited(partial)
     end
     
-    def partials
-      @partials.keys
+    def stylesheets
+      @stylesheets.keys
     end
     
     private
@@ -32,7 +36,8 @@ module StyledObjects
       @view_paths.each do |view_path|
         try_path = File.join view_path, style_file
         return style_file if File.file? try_path
-      end   
+      end
+      #raise "SO: did not find style file for #{partial}"
       nil
     end
     

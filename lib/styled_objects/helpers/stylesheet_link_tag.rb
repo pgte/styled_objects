@@ -8,7 +8,7 @@ module StyledObjects
       
       module InstanceMethods
         def so_stylesheet_link_tag
-          return "<link href=\"#{styledobject_path styled_objects_partial_css_paths.collect {|path| URI.encode(path.gsub(/:|\.css/, ''))}.join(':')}\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />"
+          return "<link href=\"#{styledobject_path styled_objects_partial_css_paths.collect {|path| URI.encode(path.gsub(/:|\.css/, ''))}.join(':')}#{"?#{ENV['RAILS_ASSET_ID']}" if ENV['RAILS_ASSET_ID'] }\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\" />"
         end
       end
       
