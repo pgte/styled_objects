@@ -42,6 +42,9 @@ module StyledObjects
           (partials_collector.stylesheets if partials_collector) || [] 
         end
     
+        def styled_objects_max_mtime
+          partials_collector.max_mtime if partials_collector 
+        end
         
         private
         

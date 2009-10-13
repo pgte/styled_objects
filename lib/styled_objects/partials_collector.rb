@@ -5,27 +5,29 @@ module StyledObjects
       @stylesheets = {}
       @visited_partials = {}
       @view_paths = view_paths
+      @max_mtime = 0
     end
     
-    def partial_visited(partial)
-#      unless @visited_partials[partial]
-#        @visited_partials[partial] = true
-        style_file = _find_style_file(partial)
+    def << (partial)
+      unless @visited_partials[partial]
+        @visited_partials[partial] = true
+        style_file, mtime = _find_style_file(partial)
         if style_file
           @stylesheets[style_file] = true
+          @max_mtime = mtime if mtime > @max_mtime  
         else
           nil
         end
-#      end
+      end
     end
     
-    
-    def << (partial)
-      partial_visited(partial)
-    end
     
     def stylesheets
       @stylesheets.keys
+    end
+    
+    def max_mtime
+      @max_mtime
     end
     
     private
@@ -35,7 +37,7 @@ module StyledObjects
       #RAILS_DEFAULT_LOGGER.debug("Looking for #{style_file}")
       @view_paths.each do |view_path|
         try_path = File.join view_path, style_file
-        return style_file if File.file? try_path
+        return [style_file, File.mtime(try_path).to_i] if File.file? try_path
       end
       #raise "SO: did not find style file for #{partial}"
       nil
